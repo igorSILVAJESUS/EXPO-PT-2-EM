@@ -74,6 +74,21 @@
             background-color: rgba(255, 255, 255, 0.2);
         }
         
+        .btn-invite {
+            background-color: #e74c3c;
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-invite:hover {
+            background-color: #c0392b;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
         header {
             background-color: rgba(26, 82, 118, 0.9);
             color: white;
@@ -685,6 +700,55 @@
             color: white;
         }
         
+        /* Convite para a sala */
+        .classroom-invite {
+            background: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .classroom-invite .section-title {
+            color: white;
+        }
+        
+        .classroom-invite .section-title::after {
+            background: #aed6f1;
+        }
+        
+        .invite-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .invite-details {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .invite-detail {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 200px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .invite-detail i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #aed6f1;
+        }
+        
         /* Footer */
         footer {
             background-color: #1a5276;
@@ -817,6 +881,11 @@
                 margin-left: 0;
                 margin-top: 10px;
             }
+            
+            .invite-details {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -836,6 +905,7 @@
                     <li><a href="#noticias">Notícias & Vídeos</a></li>
                     <li><a href="#solucoes">Soluções</a></li>
                     <li><a href="#equipe">Equipe</a></li>
+                    <li><a href="#convite">Convite</a></li>
                 </ul>
             </nav>
         </div>
@@ -858,6 +928,7 @@
                     <div class="btn-group">
                         <a href="#sobre" class="btn">Explorar Agora <i class="fas fa-arrow-down"></i></a>
                         <a href="#solucoes" class="btn btn-secondary">Ver Soluções <i class="fas fa-seedling"></i></a>
+                        <a href="#convite" class="btn btn-invite">Visite Nossa Sala! <i class="fas fa-door-open"></i></a>
                     </div>
                 </div>
                 
@@ -926,7 +997,7 @@
                     </div>
                     <div class="impact-content">
                         <h3>Espécies Polares Ameaçadas</h3>
-                        <p>Animais como ursos polares, focas e pinguins perdem seus habitats e fontes de alimento com o desaparecimento do gelo marinho.</p>
+                        <p>Animais como ursos polares, focas và pinguins perdem seus habitats e fontes de alimento com o desaparecimento do gelo marinho.</p>
                     </div>
                 </div>
                 <div class="impact-card">
@@ -1025,7 +1096,7 @@
                                 </div>
                             </div>
                             <div class="video-content">
-                                <h3 class="video-title">O Impacto do Derretimento nos Oceanos</h3>
+                                <h3 class="video-title">O Impacto do Derretimento nos Oceans</h3>
                                 <p class="video-desc">Como o degelo das calotas polares está afetando a circulação oceânica global.</p>
                             </div>
                         </div>
@@ -1155,6 +1226,38 @@
         </div>
     </section>
 
+    <!-- Convite para a sala de aula -->
+    <section id="convite" class="classroom-invite">
+        <div class="container">
+            <h2 class="section-title">Visite Nossa Sala de Aula!</h2>
+            <div class="invite-content">
+                <p>Gostaríamos de convidar todos para conhecer nosso espaço de trabalho e ver de perto nosso projeto sobre o derretimento das geleiras e seu impacto na biodiversidade.</p>
+                <p>Teremos maquetes, exposições interativas e estaremos disponíveis para explicar cada parte do nosso trabalho e responder perguntas.</p>
+                
+                <div class="invite-details">
+                    <div class="invite-detail">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Data</h3>
+                        <p>15 de Novembro de 2023</p>
+                    </div>
+                    <div class="invite-detail">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horário</h3>
+                        <p>14h às 17h</p>
+                    </div>
+                    <div class="invite-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Local</h3>
+                        <p>Sala 203 - 2º Ano B</p>
+                    </div>
+                </div>
+                
+                <p>Contamos com sua presença para compartilhar esse momento especial conosco!</p>
+                <a href="#" class="btn btn-invite">Confirmar Presença <i class="fas fa-check-circle"></i></a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1178,6 +1281,7 @@
                     <li><a href="#impactos">Impactos</a></li>
                     <li><a href="#solucoes">Soluções</a></li>
                     <li><a href="#equipe">Equipe</a></li>
+                    <li><a href="#convite">Convite</a></li>
                 </ul>
                 <p>© 2025 - Todos os direitos reservados</p>
             </div>
