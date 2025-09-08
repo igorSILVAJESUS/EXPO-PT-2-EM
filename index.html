@@ -64,6 +64,16 @@
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }
         
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
         header {
             background-color: rgba(26, 82, 118, 0.9);
             color: white;
@@ -174,6 +184,36 @@
             font-size: 1.2rem;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .invite-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .invite-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+        }
+        
+        .invite-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
         .hero::after {
@@ -767,6 +807,16 @@
                 margin-right: 0;
                 margin-bottom: 10px;
             }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -800,11 +850,22 @@
             <div class="hero-content">
                 <h1>Derretimento das Geleiras: Impacto na Biodiversidade</h1>
                 <p>Um alerta sobre como o desaparecimento das massas de gelo afeta a vida em nosso planeta</p>
-                <a href="#sobre" class="btn">Saiba Mais <i class="fas fa-arrow-down"></i></a>
+                
+                <!-- Convite adicionado aqui -->
+                <div class="invite-container">
+                    <h2 class="invite-title">Junte-se a nós nesta causa urgente!</h2>
+                    <p class="invite-text">Explore nosso site para entender as causas, consequências e soluções para o derretimento das geleiras. Sua conscientização é o primeiro passo para a mudança.</p>
+                    <div class="btn-group">
+                        <a href="#sobre" class="btn">Explorar Agora <i class="fas fa-arrow-down"></i></a>
+                        <a href="#solucoes" class="btn btn-secondary">Ver Soluções <i class="fas fa-seedling"></i></a>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>
 
+    <!-- Restante do código permanece igual -->
     <!-- Sobre -->
     <section id="sobre" class="about">
         <div class="container">
@@ -816,7 +877,7 @@
                     <p>Nesta apresentação, exploraremos as causas, consequências e possíveis soluções para este problema crítico que afeta todo o ecossistema terrestre.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://source.unsplash.com/600x400/?glacier-melting" alt="Geleira derretendo">
+                    <img src="https://123ecos.com.br/wp-content/uploads/2024/08/Geleiras-ou-glaciares-1.jpg" alt="Geleira derretendo">
                 </div>
             </div>
         </div>
@@ -861,7 +922,7 @@
             <div class="impact-grid">
                 <div class="impact-card">
                     <div class="impact-image">
-                        <img src="https://source.unsplash.com/400x300/?polar-bear" alt="Urso polar">
+                        <img src="https://www.pensamentoverde.com.br/wp-content/uploads/2019/12/geleiras_capa.jpg" alt="Urso polar">
                     </div>
                     <div class="impact-content">
                         <h3>Espécies Polares Ameaçadas</h3>
@@ -1235,7 +1296,25 @@
             window.addEventListener('scroll', animateOnScroll);
             // Disparar uma vez ao carregar a página
             window.addEventListener('load', animateOnScroll);
+            
+            // Funcionalidade das abas
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    
+                    // Remover classe ativa de todos os botões e conteúdos
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Adicionar classe ativa ao botão clicado e ao conteúdo correspondente
+                    btn.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
         });
     </script>
 </body>
-</html> 
+</html>
